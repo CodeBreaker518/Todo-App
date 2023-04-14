@@ -1,0 +1,103 @@
+.todo-modal-container {
+  min-width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 4rem 2rem 0 2rem;
+  animation: rubber 0.5s;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ab3f9a;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #5f2356;
+  border-radius: 20px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #853178;
+}
+@keyframes rubber {
+  0%,
+  25% {
+    width: 0%;
+  }
+  25%,
+  50% {
+    width: 95%;
+  }
+  50%,
+  75% {
+    width: 60%;
+  }
+}
+
+.background-screen {
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.todo-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-name {
+  color: black !important;
+}
+
+.close-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: -100%;
+  width: 44px;
+  height: 44px;
+  right: 0;
+  font-size: 22px;
+}
+.close-btn:hover {
+  background: rgb(153, 47, 47);
+  color: white;
+}
+.todo-add-btn {
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+.todo-add-btn:hover {
+  color: white;
+  background: #ad1457;
+}
+
+.inactive {
+  display: none;
+}
+
+/* Custom scroll bar */

@@ -1,0 +1,11 @@
+.todo-counter {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+.completed-todos {
+  font-weight: bold;
+}
+.total-todos {
+  font-weight: bold;
+}

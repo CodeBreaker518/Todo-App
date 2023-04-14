@@ -1,0 +1,16 @@
+.collection {
+  border: 1px solid transparent !important;
+  height: 300px;
+  overflow-y: auto !important;
+}
+
+@media (max-height: 700px) {
+  .collection {
+    height: 350px !important;
+  }
+}
+@media (min-height: 700px) {
+  .collection {
+    height: 500px;
+  }
+}

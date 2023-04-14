@@ -1,0 +1,25 @@
+label {
+  color: #8f6e89 !important;
+}
+
+.active {
+  color: #8f3b6e !important;
+}
+
+input {
+  color: #ffffff !important;
+}
+
+.prefix {
+  color: #6e2a63;
+}
+
+.input-field .prefix ~ label {
+  margin-left: 3rem;
+  font-size: 1.3rem;
+  padding: 0;
+}
+
+.input-field .prefix {
+  top: 1rem !important;
+}

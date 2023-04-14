@@ -1,0 +1,60 @@
+.todo-item {
+  border-radius: 10px;
+}
+.todo-item-list {
+  margin-right: 1rem;
+}
+.text-item {
+  font-size: 18px !important;
+  color: white;
+}
+.text-item::before {
+  box-sizing: unset;
+}
+.text-item--completed {
+  text-decoration: line-through;
+  color: #d0d3d4;
+}
+
+[type='checkbox'] + span:not(.lever):before,
+[type='checkbox']:not(.filled-in) + span:not(.lever):after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  z-index: 0;
+  border: 2px solid white !important;
+  border-radius: 1px;
+  margin-top: 3px;
+  transition: 0.2s;
+}
+[type='checkbox']:checked + span:not(.lever):before {
+  top: -4px;
+  left: -5px;
+  width: 12px;
+  height: 22px;
+  border-top: 2px solid transparent !important;
+  border-left: 2px solid transparent !important;
+  border-right: 2px solid #82e0aa !important;
+  border-bottom: 2px solid #82e0aa !important;
+  transform: rotate(40deg);
+  backface-visibility: hidden;
+  transform-origin: 100% 100%;
+}
+/* animation sliding ondelte todoItem */
+.slide-out-left {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
