@@ -1,6 +1,6 @@
 .collection {
   border: 1px solid transparent !important;
-  height: 300px;
+  height: 300px !important;
   overflow-y: auto !important;
 }
 
@@ -11,6 +11,6 @@
 }
 @media (min-height: 700px) {
   .collection {
-    height: 500px;
+    height: 500px !important;
   }
 }
