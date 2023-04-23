@@ -16,7 +16,9 @@ export default function CreateTodoModal(props) {
 
   return (
     <>
-      <div className={`background-screen ${isActive ? '' : 'inactive'}`}> </div>
+      <div className={`background-screen ${isActive ? '' : 'inactive'}`} onClick={handleClick}>
+        {' '}
+      </div>
       <div ref={todoModalContainer} className={`todo-modal-container container ${isActive ? '' : 'inactive'}`}>
         <div className='row'>
           <div className='col s12'>
