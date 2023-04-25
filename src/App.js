@@ -28,6 +28,7 @@ function App() {
 
   const [searchValue, setSearchValue] = useState('')
   const [isActive, setIsActive] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
   const completedTodos = todos.filter((todo) => todo.completed).length
   const totalTodos = todos.length
 
@@ -59,7 +60,6 @@ function App() {
   const createTodo = (todoName) => {
     let newTodo = { text: todoName, completed: false }
     setTodos([...todos, newTodo])
-    console.log(todos)
   }
 
   const deleteTodo = (text) => {
@@ -68,6 +68,7 @@ function App() {
 
   const toggleModal = () => {
     setIsActive(!isActive)
+    setErrorMsg('')
   }
 
   return (
@@ -86,7 +87,13 @@ function App() {
         ))}
       </TodoList>
       <CreateTodoButton handleClick={toggleModal} />
-      <CreateTodoModal createTodo={createTodo} isActive={isActive} handleClick={toggleModal} />
+      <CreateTodoModal
+        createTodo={createTodo}
+        isActive={isActive}
+        handleClick={toggleModal}
+        errorMsg={errorMsg}
+        setErrorMsg={setErrorMsg}
+      />
     </>
   )
 }

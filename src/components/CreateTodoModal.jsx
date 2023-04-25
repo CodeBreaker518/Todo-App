@@ -4,14 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 export default function CreateTodoModal(props) {
-  const { isActive, handleClick, createTodo } = props
+  const { isActive, handleClick, createTodo, setErrorMsg, errorMsg } = props
   let textInput = createRef()
   let todoModalContainer = createRef()
 
   const createNewTodo = () => {
-    createTodo(textInput.current.value)
-    textInput.current.value = ''
-    handleClick()
+    if (textInput.current.value === '') {
+      setErrorMsg('Debes Ingresar un texto!')
+      textInput.current.focus()
+      return
+    } else {
+      createTodo(textInput.current.value)
+      textInput.current.value = ''
+      setErrorMsg('')
+      handleClick()
+    }
   }
 
   return (
@@ -29,6 +36,9 @@ export default function CreateTodoModal(props) {
                 </button>
                 <input ref={textInput} id='todoName' className='todo-name' type='text' />
                 <label htmlFor='todoName'>To do Title</label>
+              </div>
+              <div className='input-field col s12 error-msg-container'>
+                <div className='error-msg'>{errorMsg}</div>
               </div>
               <div className='input-field col s12 todo-btn-container'>
                 <div className='todo-add-btn' onClick={createNewTodo}>

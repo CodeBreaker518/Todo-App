@@ -82,6 +82,15 @@
   background: #ad1457;
 }
 
+.error-msg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error-msg {
+  color: red;
+}
+
 .inactive {
   display: none;
 }
